@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 采用注释的方式配置bean -->
+    <context:annotation-config/>
+    <!--扫描包加载实现类-->
+    <context:component-scan base-package="com.course"/>
+
+    <!-- 简化的测试配置，使用Mock对象避免数据库依赖 -->
+
+    <!-- Mock PointDATA实现 -->
+    <bean id="pointDATA" class="com.course.dao.MockPointDATAImpl"/>
+
+    <!-- 测试环境不需要AOP拦截器 -->
+
+</beans>
